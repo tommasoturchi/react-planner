@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const PAGE_TITLE = 'React Planner';
+const PAGE_TITLE = 'IMPROVE';
 const VENDORS_LIBRARIES = ['immutable', 'react', 'react-dom', 'react-redux', 'redux', 'three'];
 
 module.exports = (env, self) => {
