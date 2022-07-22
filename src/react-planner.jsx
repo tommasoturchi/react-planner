@@ -1,20 +1,21 @@
+import './styles/export';
+
+import {
+  Content,
+  FooterBarComponents,
+  SidebarComponents,
+  ToolbarComponents
+} from './components/export';
 import React, {Component} from 'react';
+
+import Catalog from './catalog/catalog';
 import PropTypes from 'prop-types';
+import Translator from './translator/translator';
+import {VERSION} from './version';
+import actions from './actions/export';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
-import Translator from './translator/translator';
-import Catalog from './catalog/catalog';
-import actions from './actions/export';
 import {objectsMap} from './utils/objects-utils';
-import {
-  ToolbarComponents,
-  Content,
-  SidebarComponents,
-  FooterBarComponents
-} from './components/export';
-import {VERSION} from './version';
-import './styles/export';
 
 const {Toolbar} = ToolbarComponents;
 const {Sidebar} = SidebarComponents;
@@ -108,7 +109,7 @@ ReactPlanner.defaultProps = {
   catalog: new Catalog(),
   plugins: [],
   allowProjectFileSupport: true,
-  softwareSignature: `React-Planner ${VERSION}`,
+  softwareSignature: `IMPROVE`,
   toolbarButtons: [],
   sidebarComponents: [],
   footerbarComponents: [],
