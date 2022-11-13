@@ -102,6 +102,7 @@ export default class FooterBar extends Component {
       projectActions.toggleSnap(globalState.snapMask.merge(val));
 
     let test = () => {
+      console.log(globalState);
       const { layers, ...state } = globalState.scene.toJS();
       const firstLayer = Object.keys(layers)[0];
       const { vertices, ...layer } = layers[firstLayer];
