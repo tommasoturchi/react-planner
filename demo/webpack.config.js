@@ -14,7 +14,7 @@ module.exports = (env, self) => {
   let config = {
     context: path.resolve(__dirname),
     entry: {
-      app: './src/renderer.jsx',
+      app: ["regenerator-runtime/runtime.js", './src/renderer.jsx'],
       vendor: VENDORS_LIBRARIES
     },
     output: {

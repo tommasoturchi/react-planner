@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Map, fromJS} from 'immutable';
-import AttributesEditor from './attributes-editor/attributes-editor';
-import { GeometryUtils, MathUtils } from '../../../utils/export';
 import * as SharedStyle from '../../../shared-style';
-import convert from 'convert-units';
+
+import { GeometryUtils, MathUtils } from '../../../utils/export';
+import {Map, fromJS} from 'immutable';
 import {MdContentCopy, MdContentPaste} from 'react-icons/md';
+import React, {Component} from 'react';
+
+import AttributesEditor from './attributes-editor/attributes-editor';
+import PropTypes from 'prop-types';
+import convert from 'convert-units';
 
 const PRECISION = 2;
 

@@ -1,4 +1,5 @@
 import * as Three from 'three';
+
 import React from 'react';
 
 const DEPTH = 10;
@@ -231,6 +232,11 @@ export default {
         length: 20,
         unit: 'cm'
       }
+    },
+    energy: {
+      label: "energy rating",
+      type: "number",
+      defaultValue: 2
     }
   },
 

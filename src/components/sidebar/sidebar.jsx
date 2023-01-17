@@ -1,14 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as SharedStyle from '../../shared-style';
+
+import If from '../../utils/react-if';
 import PanelElementEditor from './panel-element-editor/panel-element-editor';
 import PanelGroupEditor from './panel-group-editor';
-import PanelMultiElementsEditor from './panel-element-editor/panel-multi-elements-editor';
-import PanelLayers from './panel-layers';
-import PanelGuides from './panel-guides';
 import PanelGroups from './panel-groups';
+import PanelGuides from './panel-guides';
+import PanelImprove from './panel-improve';
 import PanelLayerElements from './panel-layer-elements';
-import * as SharedStyle from '../../shared-style';
-import If from '../../utils/react-if';
+import PanelLayers from './panel-layers';
+import PanelMultiElementsEditor from './panel-element-editor/panel-multi-elements-editor';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const STYLE = {
   backgroundColor: SharedStyle.PRIMARY_COLOR.main,
@@ -55,7 +57,8 @@ export default function Sidebar({ state, width, height, sidebarComponents }) {
     { index: 3, condition: true, dom: <PanelGroups mode={state.mode} groups={state.scene.groups} layers={state.scene.layers} /> },
     { index: 4, condition: !multiselected, dom: <PanelElementEditor state={state} /> },
     //{ index: 5, condition: multiselected, dom: <PanelMultiElementsEditor state={state} /> },
-    { index: 6, condition: !!selectedGroup, dom: <PanelGroupEditor state={state} groupID={selectedGroup ? selectedGroup[0] : null} /> }
+    { index: 6, condition: !!selectedGroup, dom: <PanelGroupEditor state={state} groupID={selectedGroup ? selectedGroup[0] : null} /> },
+    { index: 7, condition: true, dom: <PanelImprove state={state}/> }
   ];
 
   sorter = sorter.concat(sidebarComponents.map((Component, key) => {

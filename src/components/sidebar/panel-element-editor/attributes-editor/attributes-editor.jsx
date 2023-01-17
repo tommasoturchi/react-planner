@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
+import HoleAttributesEditor from './hole-attributes-editor';
 import ItemAttributesEditor from './item-attributes-editor';
 import LineAttributesEditor from './line-attributes-editor';
-import HoleAttributesEditor from './hole-attributes-editor';
-
+import PropTypes from 'prop-types';
 
 export default function AttributesEditor({element, onUpdate, onValid, attributeFormData, state, ...rest}) {
 

@@ -1,6 +1,8 @@
-import React from 'react';
-import { createArea, updatedArea } from './area-factory-3d';
 import * as SharedStyle from '../../shared-style';
+
+import { createArea, updatedArea } from './area-factory-3d';
+
+import React from 'react';
 import Translator from '../../translator/translator';
 
 let translator = new Translator();
@@ -29,6 +31,11 @@ export default function AreaFactory(name, info, textures) {
         defaultValue: {
           length: 0,
         }
+      },
+      adf: {
+        label: "ADF",
+        type: 'number',
+        defaultValue: 0
       }
     },
     render2D: function (element, layer, scene) {

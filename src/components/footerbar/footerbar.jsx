@@ -101,34 +101,6 @@ export default class FooterBar extends Component {
     let updateSnapMask = (val) =>
       projectActions.toggleSnap(globalState.snapMask.merge(val));
 
-    let test = () => {
-      console.log(globalState);
-      const { layers, ...state } = globalState.scene.toJS();
-      const firstLayer = Object.keys(layers)[0];
-      const { vertices, ...layer } = layers[firstLayer];
-
-      projectActions.loadProject({
-        ...state,
-        layers: {
-          ...layers,
-          [firstLayer]: {
-            ...layer,
-            vertices: {
-              ...vertices,
-              [Object.keys(vertices)[0]]: {
-                ...vertices[Object.keys(vertices)[0]],
-                x: vertices[Object.keys(vertices)[0]].x - 100,
-              },
-              [Object.keys(vertices)[1]]: {
-                ...vertices[Object.keys(vertices)[1]],
-                x: vertices[Object.keys(vertices)[1]].x - 100,
-              },
-            },
-          },
-        },
-      });
-    };
-
     return (
       <div style={{ ...footerBarStyle, width, height }}>
         <If condition={MODE_SNAPPING.includes(mode)}>
@@ -215,7 +187,6 @@ export default class FooterBar extends Component {
 
         {this.props.softwareSignature ? (
           <div
-            onClick={() => test()}
             style={rightTextStyle}
             title={
               this.props.softwareSignature +
