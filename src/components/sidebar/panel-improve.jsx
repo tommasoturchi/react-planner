@@ -11,7 +11,7 @@ import React, { Component } from "react";
 import Panel from "./panel";
 import PropTypes from "prop-types";
 
-const SERVERADDR = "http://127.0.0.1:3002";
+const SERVERADDR = "/cgi-bin/improve";
 
 const contentArea = {
   height: "auto",
@@ -75,7 +75,7 @@ export default class PanelImprove extends Component {
   async improve() {
     let { state: globalState } = this.props;
 
-    fetch(`${SERVERADDR}/improve`, {
+    fetch(`${SERVERADDR}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
